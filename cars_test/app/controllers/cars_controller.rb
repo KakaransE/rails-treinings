@@ -7,4 +7,8 @@ class CarsController < ApplicationController
         @search_string = params.inspect
     end
 
+    def list
+        @cars = Car.all
+    end
+
 end
