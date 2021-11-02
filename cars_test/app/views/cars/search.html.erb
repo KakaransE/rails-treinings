@@ -2,15 +2,33 @@
 <div class="row">
     <div class="col-sm-4">
         <%= render 'layouts/search'%>
-        <a href="/list" class="btn btn-info" role="button">TEST DATABASE</a>
-
+        
     </div>
 
     <div class="col-sm-8">
         
-        <p>Returned search data for : <br><b><%= @search_string %></b></p> <br> <br>
-
-        <h4>Kopējais atlasīto ierakstu skaits : <%= @list.count %></h4> <br>
+        <div class="row">
+            <h3>AUTO STATUSS ATSKAITE: </h3>
+            <div class="col-sm-4 bg-info ">
+                <h3>picture?</h3>
+            </div>
+            <div class="col-sm-8">
+                <h3>Meklētais auto:</h3>
+                <p>Ražotājs: <strong><%= params[:make].upcase %></strong></p>
+                <p>Modelis: <strong><%= params[:model].upcase %></strong></p>
+                <p>Degvielas tips: <strong><%= params[:fuel].upcase %></strong></p>
+                <p>Kopējais auto skaits pēc atlases kritērijiem: <strong class="seems-18px"><%= @list.count %></strong></p>
+                <h4><strong>AUTO STATUSS:</strong><strong class="text-success"> <%= sprintf('%.2f', @average) %></strong></h4>
+            </div>
+            <div class="col-sm-5 bg-success">
+                <h4>Grafiks Pamatpārbaudēm</h4>
+                <p><%= p @scores_basic %></p>
+            </div>
+            <div class="col-sm-6 bg-warning">
+                <h4>Grafiks Atkārtotajām Pārb.</h4>
+                <p><%= p @scores_repeated %></p>
+            </div>
+        </div>
 
     </div>
 

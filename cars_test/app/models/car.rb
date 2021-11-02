@@ -13,7 +13,6 @@ class Car < ApplicationRecord
             puts "File found"
         end
 
-        #populates also invalid objects -without value fields, needs validations
         File.open(path).each_with_index do |line, index|
             next if index == 0 
             break if index == 10000 #limiting amount of data thats been read                                    
@@ -34,6 +33,35 @@ class Car < ApplicationRecord
     def self.search(params)
         Car.where('make LIKE ? AND make LIKE ? AND fuel LIKE ?', 
             "%#{params[:make].upcase}%", "%#{params[:model].upcase}%", "%#{params[:fuel].upcase}%")
+    end
+
+
+    def self.weighted_average(list)
+        scores = [0,0,0,0]
+        list.each do |car| 
+            scores[car[:score].to_i] += 1
+        end
+        average = (scores[1].to_f + (scores[2]*2).to_f + (scores[3]*3).to_f) / list.size
+    end
+
+    def self.scores_basic(list)
+        scores = [0,0,0,0]
+        list.each do |car| 
+            if car[:inspection].eql?("PAMATPĀRBAUDE")
+                scores[car[:score].to_i] += 1 
+            end
+        end
+        return scores
+    end
+
+    def self.scores_repeated(list)
+        scores = [0,0,0,0]
+        list.each do |car| 
+            if car[:inspection].eql?("ATKĀRTOTA")
+                scores[car[:score].to_i] += 1 
+            end
+        end
+        return scores
     end
 
 
