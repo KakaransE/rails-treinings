@@ -1,5 +1,6 @@
-
+<h3>Datubāzē ir : <b><%= Car.count %></b> ieraksti </h3> <br>
 <div class="container">
+
     <% @cars.each do |car| %>
         <p><%= car.make %>, <%= car.fuel %>, <%= car.inspection %>, <%= car.score %></p>
     <% end %>

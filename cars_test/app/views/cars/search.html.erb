@@ -1,1 +1,20 @@
-<%= @search_string %>
+
+<div class="row">
+    <div class="col-sm-4">
+        <%= render 'layouts/search'%>
+        <a href="/list" class="btn btn-info" role="button">TEST DATABASE</a>
+
+    </div>
+
+    <div class="col-sm-8">
+        <% @list = Car.where('fuel = ?', params[:fuel]) %>
+        <p>Returned search data for : <br><b><%= @search_string %></b></p> <br> <br>
+        <h4>Kopējais atlasīto ierakstu skaits : <%= @list.count %></h4> <br>
+        <div class="container">
+                <% @list.each do |car| %>
+                <p><%= car.make %>, <%= car.fuel %>, <%= car.inspection %>, <%= car.score %></p>
+            <% end %>
+        </div>
+    </div>
+
+</div>
