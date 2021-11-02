@@ -31,4 +31,11 @@ class Car < ApplicationRecord
     end
 
 
+
+    def self.search(params)
+        Car.where('make LIKE ? AND make LIKE ? AND fuel LIKE ?', "%#{params[:make]}%", "%#{params[:model]}%", "%#{params[:fuel]}%")
+    end
+
+
+
 end
