@@ -1,8 +1,26 @@
-<h3>Datubāzē ir : <b><%= Car.count %></b> ieraksti </h3> <br>
-<div class="container">
 
-    <% @cars.each do |car| %>
-        <p><%= car.make %>, <%= car.fuel %>, <%= car.inspection %>, <%= car.score %></p>
-    <% end %>
-        
+
+
+<div class="row">
+    <div class="col-sm-4">
+
+        <%= render 'layouts/search'%>
+        <a href="/list" class="btn btn-info" role="button">TEST DATABASE</a>
+
+    </div>
+
+    <div class="col-sm-8">
+
+        <h3>Datubāzē ir : <b><%= Car.count %></b> ieraksti </h3>
+        <h3>Zemāk attēloti <b>100</b> pirmie ieraksti</h3><br>
+        <div class="container">
+
+            <% @cars.each_with_index do |car, index| %>
+                <% break if index > 100 %>
+                <p><%= car.make %>, <%= car.fuel %>, <%= car.inspection %>, <%= car.score %></p>
+            <% end %>
+        </div>
+
+    </div>
+
 </div>

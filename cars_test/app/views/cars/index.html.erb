@@ -1,11 +1,19 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-danger">
+    <strong><%= msg %></strong>
+  </div>
+<% end %>
 
 <div class="row">
     <div class="col-sm-4">
+
         <%= render 'layouts/search'%>
         <a href="/list" class="btn btn-info" role="button">TEST DATABASE</a>
 
     </div>
 
-    <div class="col-sm-8"><p>Returned search data here ? Or return in search view?</p></div>
+    <div class="col-sm-8">
+    <h3>Apraksts kā izmantot meklēšanas rīku un kas tiks atgriezts</h3>
+    </div>
 
 </div>

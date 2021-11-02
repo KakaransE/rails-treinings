@@ -7,14 +7,11 @@
     </div>
 
     <div class="col-sm-8">
-        <% @list = Car.search(params) %>
+        
         <p>Returned search data for : <br><b><%= @search_string %></b></p> <br> <br>
+
         <h4>Kopējais atlasīto ierakstu skaits : <%= @list.count %></h4> <br>
-        <div class="container">
-                <% @list.each do |car| %>
-                <p><%= car.make %>, <%= car.fuel %>, <%= car.inspection %>, <%= car.score %></p>
-            <% end %>
-        </div>
+
     </div>
 
 </div>
