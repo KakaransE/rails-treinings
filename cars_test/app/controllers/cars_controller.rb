@@ -9,8 +9,9 @@ class CarsController < ApplicationController
         if params[:make].present? && params[:model].present? && params[:fuel].present?
             @list = Car.search(params)
             @average = Car.weighted_average(@list)
-            @scores_basic = Car.scores_basic(@list)
-            @scores_repeated = Car.scores_repeated(@list)
+            @graph_data_basic = Car.graph_data_basic(@list)
+            @graph_data_repeated = Car.graph_data_repeated(@list)
+            @chart_max = Car.chart_max(@graph_data_basic)
         else
             
             flash.now[:danger] = "Jāaizpilda visi lauciņi!"

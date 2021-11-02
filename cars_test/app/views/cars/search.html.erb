@@ -19,15 +19,12 @@
                 <p>Degvielas tips: <strong><%= params[:fuel].upcase %></strong></p>
                 <p>Kopējais auto skaits pēc atlases kritērijiem: <strong class="seems-18px"><%= @list.count %></strong></p>
                 <h4><strong>AUTO STATUSS:</strong><strong class="text-success"> <%= sprintf('%.2f', @average) %></strong></h4>
-            </div>
-            <div class="col-sm-5 bg-success">
-                <h4>Grafiks Pamatpārbaudēm</h4>
-                <p><%= p @scores_basic %></p>
-            </div>
-            <div class="col-sm-6 bg-warning">
-                <h4>Grafiks Atkārtotajām Pārb.</h4>
-                <p><%= p @scores_repeated %></p>
-            </div>
+            </div>   
+        </div>
+        <br>
+        <div class="row border-top">
+            <br>
+            <%= render 'layouts/car_graphs'%>
         </div>
 
     </div>
