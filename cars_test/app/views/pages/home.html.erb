@@ -1,18 +1,18 @@
 <div class="jumbotron">
 
-
     <div class="row">
         <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-        <h2 class="text-center"><strong>AUTO STATUSS</strong></h2> <br>
-        <h4 class="spacing">AUTOSTATUSS IR APLIKĀCIJA, KAS DOD IESPĒJU VISIEM LATVIJAS IEDZĪVOTĀJIEM IEPAZĪTIES AR LATVIJAS 
-            REPUBLIKĀ REĢISTRĒTO AUTO KOPĒJO STĀVOKLI</h4>
-        <h5 class="spacing">JUMS IR IESPĒJA IEVADĪT JUMS INTERESĒJOŠO AUTO RŽOTĀJU, MODELI UN DEGVIELAS TIPU</h5> 
+        <div class="col-sm-6 matt">
+        <br>
+        <h1 class="text-center home-title"><b>AUTO STATUSS</b></h1> <br> <br>
+        <h4 class="spacing home-text"><b>AUTO STATUSS IR APLIKĀCIJA, KAS DOD IESPĒJU VISIEM LATVIJAS IEDZĪVOTĀJIEM IEPAZĪTIES AR LATVIJAS 
+            REPUBLIKĀ REĢISTRĒTO AUTO KOPĒJO STĀVOKLI<b></h4>
+        <h5 class="spacing home-text"><b>JUMS IR IESPĒJA IEVADĪT JUMS INTERESĒJOŠO AUTO RŽOTĀJU, MODELI UN DEGVIELAS TIPU</b></h5> 
         
-        <a href="/cars" class="btn btn-default form-control" role="button">TURPINĀT</a>
+        <%= button_to "UZ AUTO ATLASI", cars_path, method: :get, class: 'btn home-btn btn-default form-control'%>
+        <br>
         </div>
         <div class="col-sm-3"></div>
-
         
     </div>
 

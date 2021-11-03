@@ -13,11 +13,13 @@
             <%= form.label :model, "Modelis" %><br>
             <%= form.text_field :model, class: 'form-control' %>
             </p>
-
-            <p>
-            <%= form.label :fuel, "Degvielas tips" %><br>
-            <%= form.text_field :fuel, class: 'form-control' %>
-            </p>
+            
+            <%= form.label :fuel, "Degviela" %><br>
+            <select id="fuel" name="fuel" class="form-control">
+                <% Car.get_fuel_types.each do |fuel| %>
+                    <option value="<%=fuel%>"><%=fuel%></option>
+                <% end%>
+            </select><br>
 
             <p>
             <%= form.check_box :only_make %>
@@ -25,7 +27,7 @@
             </p>            
 
             <p>
-            <%= form.submit "Atlasīt", class: 'form-control btn-primary' %>
+            <%= form.submit "ATLASĪT", class: 'form-control btn-primary' %>
             </p>
 
         <% end %>

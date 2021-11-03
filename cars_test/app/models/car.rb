@@ -35,6 +35,18 @@ class Car < ApplicationRecord
             "%#{params[:make].upcase}%", "%#{params[:model].upcase}%", "%#{params[:fuel].upcase}%")
     end
 
+    def self.search_make(params) # DB query to look for cars that meet search params: make, model, fuel
+        Car.where('make LIKE ?', "%#{params[:make].upcase}%")
+    end
+
+    def self.get_fuel_types
+        fuel_types = []
+        (Car.select(:fuel).distinct).each do |car|
+            fuel_types.push(car[:fuel])
+        end
+        return fuel_types
+    end
+
 
     def self.weighted_average(list) # calculate weighted average value for technical inspection results, needs to pass Car objects from Car.search()
         scores = [0,0,0,0]

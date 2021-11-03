@@ -12,8 +12,9 @@
 
         <h3>Datubāzē ir : <b><%= Car.count %></b> ieraksti </h3>
         <h3>Zemāk attēloti <b>100</b> pirmie ieraksti</h3><br>
-        <div class="container">
+        <%= p params %>
 
+        <div class="container">
             <% @cars.each_with_index do |car, index| %>
                 <% break if index > 100 %>
                 <p><%= car.make %>, <%= car.fuel %>, <%= car.inspection %>, <%= car.score %></p>

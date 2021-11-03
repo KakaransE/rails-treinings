@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-sm-4">
+
+        <%= render 'layouts/search'%>
+
+    </div>
+
+    <div class="col-sm-8">
+
+        <h3 class="text-center">APLIKĀCIJAS DATUBĀZĒ ŠOBRĪD IR : <b><%= Car.count %></b> IERAKSTI </h3>
+        <h4 class="text-center">ZEMĀK DOTI <b>50</b> PIRMIE DATUBĀZES IERAKSTI</h3><br>
+
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>RAŽOTĀJS / MODELIS</th>
+                        <th>DEGVIELAS VEIDS</th>
+                        <th>TA PĀRBAUDES VEIDS</th>
+                        <th>REZULTĀTS</th>
+                    </tr>
+                </thead>
+            <tbody>
+
+                    <% @cars.each_with_index do |car, index| %>
+                        <% break if index > 50 %>
+                        <tr>
+                            <td><%= car.make %></td>
+                            <td><%= car.fuel %></td>
+                            <td><%= car.inspection %></td>
+                            <td><%= car.score %></td>
+                        </tr>
+                    <% end %>
+
+            </tbody>
+        </table>
+
+        <div class="container">
+            
+        </div>
+
+    </div>
+
+</div>

@@ -30,11 +30,32 @@ body {
 .jumbotron {
     align-items: center;
     min-height: 500px;
+    background-image: url(https://images.pexels.com/photos/1526715/pexels-photo-1526715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: 0% 25%;
+    background-size: cover;
 }
 
 .spacing {
     line-height: 1.7;
     text-align: center;
     text-justify: distribute;
+}
+
+.home-text {
+    color: lightgrey;
+}
+
+.home-title {
+    color: whitesmoke;
+}
+
+.home-btn {
+   // background-color: lightgrey;
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+}
+
+.matt {
+    background-color: rgba(70, 70, 70, 0.466);
 }
 

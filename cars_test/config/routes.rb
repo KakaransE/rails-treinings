@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'cars#search' 
   get 'list', to: 'cars#list'
+  get 'data', to: 'cars#data'
 
   resources :cars
 
