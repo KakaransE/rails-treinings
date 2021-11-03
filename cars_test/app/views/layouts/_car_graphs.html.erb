@@ -1,11 +1,10 @@
 <div class="col-sm-5">
     <h4 class="text-center">Pamatpārbaužu rezultāti</h4>
     <%= column_chart @graph_data_basic, colors: ["#32cd32"],
-        xtitle: "Vērtējums", ytitle: "Rezultātu skaits"%>
-         <%= p @chart_max %>
+        xtitle: "Vērtējums", ytitle: "Rezultātu skaits", max: @chart_max%>
 </div>
 <div class="col-sm-5">
     <h4 class="text-center">Atkārtoto pārbaužu rezultāti</h4>
     <%= column_chart @graph_data_repeated, colors: ["#FFD700"], 
-        xtitle: "Vērtējums", ytitle: "Rezultātu skaits" %>
+        xtitle: "Vērtējums", ytitle: "Rezultātu skaits", max: @chart_max %>
 </div>

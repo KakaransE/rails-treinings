@@ -10,7 +10,10 @@
         <div class="row">
             <h3>AUTO STATUSS ATSKAITE: </h3>
             <div class="col-sm-4">
-                <img src="https://<%=ImageScraper.get_image(params[:make], params[:model])%>" class="img-thumbnail">
+                <div>
+                <br>
+                <img src="<%=@thumbnail_url%>" class="img-thumbnail">
+                </div>
             </div>
             <div class="col-sm-8">
                 <h3>Meklētais auto:</h3>

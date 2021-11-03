@@ -18,7 +18,7 @@ class ImageScraper < ApplicationRecord
         info_string = photo_attributes.first.split(';').last # spliting vallues, of supposed xml element(string)?
         offset = info_string.index('url') # position (offset) where 'url' starts (needs to add 6 places to compensate for 'url(//')
         url_string = info_string[(6+offset)..-2] # cropps off front and last bracket
-
+        return "https://#{url_string}"
     end
 
 

@@ -19,10 +19,13 @@
             <%= form.text_field :fuel, class: 'form-control' %>
             </p>
 
-            <h4>Additional Options</h4>
+            <p>
+            <%= form.check_box :only_make %>
+            <%= form.label :only_make, "Atlasīt tikai pēc ražotāja" %><br>
+            </p>            
 
             <p>
-            <%= form.submit "Meklēt", class: 'form-control btn-primary' %>
+            <%= form.submit "Atlasīt", class: 'form-control btn-primary' %>
             </p>
 
         <% end %>

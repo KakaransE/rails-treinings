@@ -64,13 +64,13 @@ class Car < ApplicationRecord
         return scores
     end
 
-    def self.chart_max(values) # calculates y axis max value (10% greater than max value rounded down to 10s)
+    def self.chart_max(values) # calculates y axis max value rounded down to 10s
         max = 0
         values.each do |value_pair|
             max = value_pair[1] if max < value_pair[1]
         end
         max /= 10 # drops the last digit
-        max *= 10
+        max = (max*10)+10
 
     end
 
