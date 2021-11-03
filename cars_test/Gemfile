@@ -11,6 +11,9 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 # chartkick for charts
 gem 'chartkick', '~> 4.1'
+# for image scraping
+gem 'httparty', '~> 0.20.0'
+gem 'nokogiri', '~> 1.12', '>= 1.12.5'
 
 
 
