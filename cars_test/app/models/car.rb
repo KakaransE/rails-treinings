@@ -5,17 +5,17 @@ class Car < ApplicationRecord
     validates :inspection, presence: true
     validates :score, presence: true
 
-    def self.populate_database
+
+    def self.populate_database(lines_to_read)
 
         path = "/home/me/Ruby On Rails/rails-treinings-data/test_data/ta2020e.lst"
-
         if File.exists?(path)
             puts "File found"
         end
 
         File.open(path).each_with_index do |line, index|
             next if index == 0 
-            break if index == 100000 #limiting amount of data thats been read                                    
+            break if index == lines_to_read #limiting amount of data to be read                                   
             args = line.split(',')   
 
             car_to_save = Car.new({
@@ -30,12 +30,15 @@ class Car < ApplicationRecord
         end
     end
 
-    def self.search(params) # DB query to look for cars that meet search params: make, model, fuel
+
+
+    # DB query methods
+    def self.search(params) 
         Car.where('make LIKE ? AND make LIKE ? AND fuel = ?', 
             "%#{params[:make].upcase}%", "%#{params[:model].upcase}%", "#{params[:fuel].upcase}")
     end
 
-    def self.search_make(params) # DB query to look for cars that meet search params: make, model, fuel
+    def self.search_make(params) 
         Car.where('make LIKE ?', "%#{params[:make].upcase}%")
     end
 
@@ -48,7 +51,9 @@ class Car < ApplicationRecord
     end
 
 
-    def self.weighted_average(list) # calculate weighted average value for technical inspection results, needs to pass Car objects from Car.search()
+
+    # Calculation of AUTOSTATUS score - calculate weighted average value 
+    def self.weighted_average(list) 
         scores = [0,0,0,0]
         list.each do |car| 
             scores[car[:score].to_i] += 1
@@ -56,7 +61,10 @@ class Car < ApplicationRecord
         average = (scores[1].to_f + (scores[2]*2).to_f + (scores[3]*3).to_f) / list.size
     end
 
-    def self.graph_data_basic(list)    # returns value pairs for basic inspection graph
+
+
+    # Methods for calculating data for graphs
+    def self.graph_data_basic(list)    
         scores = [[0, 0], [1, 0], [2, 0], [3, 0]] #not the most gracefull way, but might be faster than creating additional loop
         list.each do |car| 
             if car[:inspection].eql?("PAMATPĀRBAUDE")
@@ -66,7 +74,7 @@ class Car < ApplicationRecord
         return scores
     end
 
-    def self.graph_data_repeated(list)  # returns value pairs for repeated inspection graph
+    def self.graph_data_repeated(list) 
         scores = [[0, 0], [1, 0], [2, 0], [3, 0]]
         list.each do |car| 
             if car[:inspection].eql?("ATKĀRTOTA")
@@ -85,6 +93,5 @@ class Car < ApplicationRecord
         max = (max*10)+10
 
     end
-
 
 end
