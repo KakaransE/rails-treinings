@@ -1,20 +1,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+// Website style elements
 body {
     margin-top: 100px;
 }
-
-.navbar-right {
-    padding-right: 100px;
+.matt {
+    background-color: rgba(255, 255, 255, 0.733);
+    min-height: 425px;
 }
 
+
+// Navbar
+.navbar-right {
+    padding-right: 200px;
+}
 .navbar-brand {
-    padding-left: 150px;
+    padding-left: 200px;
     
 }
 
+
+// cars/search 
 .seems-18px {
     font-size: 18px;
 }
@@ -23,10 +30,8 @@ body {
     border-top: 1px solid gray;
 }
 
-.landing-page {
-    max-width: 60%;
-}
 
+// Homepage
 .jumbotron {
     align-items: center;
     min-height: 520px;
@@ -34,32 +39,15 @@ body {
     background-position: 0% 25%;
     background-size: cover;
 }
-
 .spacing {
     line-height: 1.7;    
 }
-
 .home-text {
     color: rgb(49, 49, 49);
 }
 
-.home-btn {
-   // background-color: lightgrey;
-    color: rgb(43, 43, 43);
-    font-weight: bold;
-}
 
-.matt {
-    background-color: rgba(255, 255, 255, 0.733);
-    min-height: 425px;
-}
-
-.grapgh {
-    object-fit: cover;
-}
-
-
-// style classes for footer
+// Footer
 footer {
     margin-top: 45px;
     padding-top: 5px;
@@ -73,15 +61,13 @@ footer {
       }
       small {
         float: left;
-    }    
+    }  
+    ul {
+        float: right;
+        list-style: none;
+    }
+    li {
+        float: left;
+        margin-left: 20px;
+    }  
 }
-ul {
-    float: right;
-    list-style: none;
-}
-li {
-    float: left;
-    margin-left: 20px;
-}
-
-

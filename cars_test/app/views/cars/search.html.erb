@@ -1,15 +1,12 @@
-
 <div class="row">
 
     <div class="col-sm-4">
-        <%= render 'layouts/search'%>
-        
+        <%= render 'layouts/search'%>   
     </div>
 
     <div class="col-sm-8">
 
         <div class="row">
-            
             <div class="col-sm-4">
                 <div>
                 <br>
@@ -24,14 +21,12 @@
                 <p>Kopējais auto skaits pēc atlases kritērijiem: <strong class="seems-18px"><%= @list.count %></strong></p>
                 <h4><strong>AUTO STATUSS:</strong><strong class="text-success"> <%= sprintf('%.2f', @average) %></strong></h4>
             </div > 
-                
-            <div class="col-sm-2 relative">
+            <div class="col-sm-2 relative"><br>
                 <%= link_to "ATLASĪTIE IERAKSTI", list_path(make: params[:make], model: params[:model], fuel: params[:fuel]), class: "btn btn-primary"%>
             </div>  
         </div><br>
 
-        <div class="row border-top">
-            <br>
+        <div class="row border-top"><br>
             <%= render 'layouts/car_graphs'%>
         </div>
 

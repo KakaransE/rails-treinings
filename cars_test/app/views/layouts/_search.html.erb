@@ -1,6 +1,6 @@
-
 <div class="row">
     <div class="col-sm-3"></div>
+
     <div class="col-sm-8">
         <br>
         <%= form_with url: "/search", method: :get do |form| %>
@@ -16,7 +16,7 @@
             
             <%= form.label :fuel, "Degviela" %><br>
             <select id="fuel" name="fuel" class="form-control">
-                    <option value="" ></option>
+                <option value="" ></option>
                 <% Car.get_fuel_types.each do |fuel| %>
                     <option value="<%=fuel%>"><%=fuel%></option>
                 <% end%>
@@ -30,7 +30,7 @@
             <p>
             <%= form.submit "ATLASĪT", class: 'form-control btn-primary' %>
             </p>
-
         <% end %>
     </div>
+
 </div>
