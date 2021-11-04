@@ -11,7 +11,7 @@ body {
 }
 
 .navbar-brand {
-    padding-left: 100px;
+    padding-left: 150px;
     
 }
 
@@ -30,7 +30,7 @@ body {
 .jumbotron {
     align-items: center;
     min-height: 500px;
-    background-image: url(https://images.pexels.com/photos/1526715/pexels-photo-1526715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: url(https://images.pexels.com/photos/756861/pexels-photo-756861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-position: 0% 25%;
     background-size: cover;
 }
@@ -42,11 +42,7 @@ body {
 }
 
 .home-text {
-    color: lightgrey;
-}
-
-.home-title {
-    color: whitesmoke;
+    color: rgb(49, 49, 49);
 }
 
 .home-btn {
@@ -56,6 +52,7 @@ body {
 }
 
 .matt {
-    background-color: rgba(70, 70, 70, 0.466);
+    background-color: rgba(233, 233, 233, 0.685);
+    min-height: 400px;
 }
 

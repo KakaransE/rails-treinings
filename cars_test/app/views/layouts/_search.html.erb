@@ -16,6 +16,7 @@
             
             <%= form.label :fuel, "Degviela" %><br>
             <select id="fuel" name="fuel" class="form-control">
+                    <option value="" ></option>
                 <% Car.get_fuel_types.each do |fuel| %>
                     <option value="<%=fuel%>"><%=fuel%></option>
                 <% end%>

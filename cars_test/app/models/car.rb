@@ -15,7 +15,7 @@ class Car < ApplicationRecord
 
         File.open(path).each_with_index do |line, index|
             next if index == 0 
-            break if index == 10000 #limiting amount of data thats been read                                    
+            break if index == 100000 #limiting amount of data thats been read                                    
             args = line.split(',')   
 
             car_to_save = Car.new({
@@ -31,8 +31,8 @@ class Car < ApplicationRecord
     end
 
     def self.search(params) # DB query to look for cars that meet search params: make, model, fuel
-        Car.where('make LIKE ? AND make LIKE ? AND fuel LIKE ?', 
-            "%#{params[:make].upcase}%", "%#{params[:model].upcase}%", "%#{params[:fuel].upcase}%")
+        Car.where('make LIKE ? AND make LIKE ? AND fuel = ?', 
+            "%#{params[:make].upcase}%", "%#{params[:model].upcase}%", "#{params[:fuel].upcase}")
     end
 
     def self.search_make(params) # DB query to look for cars that meet search params: make, model, fuel
