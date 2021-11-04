@@ -23,7 +23,7 @@ class CarsController < ApplicationController
     # end
 
     def search
-        @search_string = params.inspect
+        # @search_string = params.inspect # for troubleshooting
 
         if params[:make].present? && (params[:only_make].to_i == 1)
             @list = Car.search_make(params)
@@ -61,7 +61,11 @@ class CarsController < ApplicationController
     end
 
     def list
-        @cars = Car.all
+        if ((params[:model] == "visi") && (params[:fuel] == "visi"))
+            @list = Car.search_make(params)
+        else
+            @list = Car.search(params)
+        end
     end
 
     def data

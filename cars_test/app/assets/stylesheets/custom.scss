@@ -29,16 +29,14 @@ body {
 
 .jumbotron {
     align-items: center;
-    min-height: 500px;
+    min-height: 520px;
     background-image: url(https://images.pexels.com/photos/756861/pexels-photo-756861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-position: 0% 25%;
     background-size: cover;
 }
 
 .spacing {
-    line-height: 1.7;
-    text-align: center;
-    text-justify: distribute;
+    line-height: 1.7;    
 }
 
 .home-text {
@@ -52,7 +50,9 @@ body {
 }
 
 .matt {
-    background-color: rgba(233, 233, 233, 0.685);
-    min-height: 400px;
+    background-color: rgba(255, 255, 255, 0.733);
+    min-height: 425px;
 }
+
+
 
