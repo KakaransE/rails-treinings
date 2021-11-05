@@ -6,13 +6,7 @@
 
     <div class="col-sm-8">
 
-        <h3 class="text-center">ATLASĪTO AUTO SKAITS : <b><%= @list.count %></b> IERAKSTI </h3>
-        <h4 class="text-center">ZEMĀK DOTI 
-            <b><%if @list.count < 50 %>
-                <%= @list.count%>
-                <% else%>
-                <%= "50"%>
-                <% end %></b> ATLASĪTIE IERAKSTI</h4><br>
+        <h3 class="text-center">ATLASĪTO AUTO SKAITS : <b><%= @count %></b> IERAKSTI </h3><br>
 
         <table class="table table-striped">
                 <thead>
@@ -35,6 +29,10 @@
                     <% end %>
             </tbody>
         </table>
+
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center paginate"><p><%= paginate @list %></p></div>
+        <div class="col-sm-2"></div>
 
     </div>
 

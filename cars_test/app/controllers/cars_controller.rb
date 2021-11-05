@@ -41,14 +41,16 @@ class CarsController < ApplicationController
 
     def list
         if ((params[:model] == "visi") && (params[:fuel] == "visi"))
-            @list = Car.search_make(params)
+            @count = Car.search_make(params).count
+            @list = Car.search_make(params).page(params[:page]).per(10)
         else
-            @list = Car.search(params)
+            @count = Car.search_make(params).count
+            @list = Car.search(params).page(params[:page]).per(10)
         end
     end
 
     def data
-        @cars = Car.all
+        @cars = Car.page(params[:page]).per(10)
     end
 
 end

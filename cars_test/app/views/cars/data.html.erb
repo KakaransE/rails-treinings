@@ -7,7 +7,6 @@
     <div class="col-sm-8">
 
         <h3 class="text-center">APLIKĀCIJAS DATUBĀZĒ ŠOBRĪD IR : <b><%= Car.count %></b> IERAKSTI </h3>
-        <h4 class="text-center">ZEMĀK DOTI <b>50</b> PIRMIE DATUBĀZES IERAKSTI</h3>
         <h5 class="text-center">Sīkāku informāciju par datu ieguvi var apskatīt sadaļā: <a href="/about">PAR</a></h5><br>
 
         <table class="table table-striped">
@@ -32,6 +31,10 @@
             </tbody>
         </table>
 
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 text-center paginate"><p><%= paginate @cars %></p></div>
+        <div class="col-sm-2"></div>
+        
     </div>
 
 </div>

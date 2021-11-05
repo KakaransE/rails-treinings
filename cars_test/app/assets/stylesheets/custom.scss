@@ -71,3 +71,13 @@ footer {
         margin-left: 20px;
     }  
 }
+
+// Paginator links
+.paginate {
+    a {
+        color: #555;
+        &:hover {
+            color: rgb(3, 3, 3);
+          }
+    }
+}
