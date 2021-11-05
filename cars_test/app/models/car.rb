@@ -42,6 +42,10 @@ class Car < ApplicationRecord
         Car.where('make LIKE ?', "%#{params[:make].upcase}%")
     end
 
+    def self.search_make_dist
+        Car.select(:make).distinct
+    end
+
     def self.get_fuel_types
         fuel_types = []
         (Car.select(:fuel).distinct).each do |car|

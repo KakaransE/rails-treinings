@@ -44,13 +44,17 @@ class CarsController < ApplicationController
             @count = Car.search_make(params).count
             @list = Car.search_make(params).page(params[:page]).per(10)
         else
-            @count = Car.search_make(params).count
+            @count = Car.search(params).count
             @list = Car.search(params).page(params[:page]).per(10)
         end
     end
 
     def data
         @cars = Car.page(params[:page]).per(10)
+    end
+
+    def distinct
+        @cars = Car.search_make_dist.order(:make).page(params[:page]).per(10)
     end
 
 end

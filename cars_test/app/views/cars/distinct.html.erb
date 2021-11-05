@@ -6,27 +6,21 @@
 
     <div class="col-sm-8">
 
-        <h3 class="text-center">APLIKĀCIJAS DATUBĀZĒ ŠOBRĪD IR : <b><%= Car.count %></b> IERAKSTI </h3>
+        <h3 class="text-center">UNIKĀLO RAŽOTĀJA/MODEĻA PĀRU SKAITS : <b><%= Car.count %></b> IERAKSTI </h3>
         <h4 class="text-center">Aplūkot unikālos auto modeļus, kas ir datubāzē, var: <a href="/distinct">ŠEIT</a></h4>
         <h5 class="text-center">Sīkāku informāciju par datu ieguvi var apskatīt sadaļā: <a href="/about">PAR</a></h5><br>
 
         <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>RAŽOTĀJS / MODELIS</th>
-                        <th>DEGVIELAS VEIDS</th>
-                        <th>TA PĀRBAUDES VEIDS</th>
-                        <th>REZULTĀTS</th>
+                        <th class="text-center">RAŽOTĀJS / MODELIS</th>
                     </tr>
                 </thead>
             <tbody>
                     <% @cars.each_with_index do |car, index| %>
                         <% break if index > 50 %>
                         <tr>
-                            <td><%= car.make %></td>
-                            <td><%= car.fuel %></td>
-                            <td><%= car.inspection %></td>
-                            <td><%= car.score %></td>
+                            <td class="text-center"><%= car.make %></td>
                         </tr>
                     <% end %>
             </tbody>
