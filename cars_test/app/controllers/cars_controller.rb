@@ -54,6 +54,7 @@ class CarsController < ApplicationController
     end
 
     def distinct
+        @count = Car.search_make_dist.order(:make).count
         @cars = Car.search_make_dist.order(:make).page(params[:page]).per(10)
     end
 
